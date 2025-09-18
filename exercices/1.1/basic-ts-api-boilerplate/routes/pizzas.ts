@@ -36,12 +36,6 @@ const defaultPizzas: Pizza[] = [
   },
 ];
 
-// Tutorial : Added error handling middleware Route to test if it works well 
-router.get("/error", (_req, _res, _next) => {
-  throw new Error("This is an error");
-  // equivalent of next(new Error("This is an error"));
-});
-
 /* Read all the pizzas from the menu
    GET /pizzas?order=title : ascending order by title
    GET /pizzas?order=-title : descending order by title
