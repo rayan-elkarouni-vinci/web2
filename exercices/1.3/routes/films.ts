@@ -76,9 +76,21 @@ router.post("/", (req, res) => {
       return res.status(400).send("Missing data");
     }
 
-    if(typeof body.title !== "string" || typeof body.director !== "string" || typeof body.duration !== "number" || typeof body.budget !== "number" || typeof body.description !== "string" || typeof body.imageUrl !== "string") {
+    if(typeof body.title !== "string" || typeof body.director !== "string" || typeof body.duration !== "number") {
       return res.status(400).send("Invalid type of data");
     }
+
+    // Vérification des types optionnels (seulement si présents)
+    if (body.budget !== undefined && typeof body.budget !== "number") {
+      return res.status(400).send("Invalid type for budget");
+    }
+    if (body.description !== undefined && typeof body.description !== "string") {
+      return res.status(400).send("Invalid type for description");
+    }
+    if (body.imageUrl !== undefined && typeof body.imageUrl !== "string") {
+      return res.status(400).send("Invalid type for imageUrl");
+    }
+
 
     if (body.duration < 0) {
       return res.status(400).send("Invalid duration");
@@ -86,6 +98,9 @@ router.post("/", (req, res) => {
     if(body.budget < 0) {
       return res.status(400).send("Invalid budget");
     }
+
+
+
 
     // EX : Bonus - debut
 
@@ -100,6 +115,9 @@ router.post("/", (req, res) => {
     }
     
     // EX : Bonus - fin
+
+
+
 
 
     // Extractions des infos

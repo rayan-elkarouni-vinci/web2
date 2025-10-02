@@ -18,7 +18,5 @@ Content-Type: application/json
   "title": "Interstellar",
   "director": "Christopher Nolan",
   "duration": 169,
-  "budget": 165000000,
-  "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-  "imageUrl": "https://example.com/interstellar.jpg"
+  "budget": 165000000
 }
