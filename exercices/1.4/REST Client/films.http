@@ -1,0 +1,34 @@
+### Read all films
+GET http://localhost:3000/films
+
+### Read all films  with a minimum-duration filter
+GET http://localhost:3000/films?minimum-duration=200
+
+### Variable pour URL local
+@baseUrl = http://localhost:3000
+
+### Read film identified by 2
+GET {{baseUrl}}/films/2
+
+### POST a new film
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+  "title": "Interstellar",
+  "director": "Christopher Nolan",
+  "duration": 169,
+  "budget": 165000000
+}
+
+### GET with letter filter
+GET http://localhost:3000/films?start=L
+
+### GET fims sorted by title
+GET http://localhost:3000/films?order=title
+
+### GET fims sorted by title DESC
+GET http://localhost:3000/films?order=-title
+
+### GET fims paginated
+GET http://localhost:3000/films?page=2&pageSize=2
