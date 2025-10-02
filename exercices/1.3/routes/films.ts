@@ -67,8 +67,11 @@ router.get("/:id", (req, res) => {
 
 // POST 
 router.post("/", (req, res) => {
+
+    // Recuperation des infos
     const body = req.body;
 
+    // Verifications des infos
     if(!body || !body.title || !body.director || !body.duration) {
       return res.status(400).send("Missing data");
     }
@@ -84,6 +87,7 @@ router.post("/", (req, res) => {
       return res.status(400).send("Invalid budget");
     }
 
+    // Extractions des infos
     const {title, director, duration, budget, description, imageUrl} = body as NewFilm;
 
     // Definition de l'id
@@ -92,6 +96,7 @@ router.post("/", (req, res) => {
       nextId = films[films.length - 1].id + 1;
     }
 
+    // Creation du nouveau elements a rajouter
     const newFilm: Film = {
       id: nextId,
       title,
@@ -102,6 +107,7 @@ router.post("/", (req, res) => {
       imageUrl
     };
 
+    // Rajouter l'element et le job est terminé
     films.push(newFilm);
     return res.status(201).json(films);
 });
