@@ -1,5 +1,4 @@
-# Exercice 1.2 : middleware s'exécutant sur toutes les routes
+# Exercice 1.3 : Ajout de GET ALL || FILTERED, GET BY ID et une méthode POST.
 
-## Ajout d"un middleware qui permette d'enregistrer et d'afficher dans la console des statistiques sur les requêtes faites à mon API.
 
-### Plus précisément un compteur de nombre de requêtes GET faites à mon API.
+
