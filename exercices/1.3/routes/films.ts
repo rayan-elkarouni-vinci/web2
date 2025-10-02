@@ -87,6 +87,21 @@ router.post("/", (req, res) => {
       return res.status(400).send("Invalid budget");
     }
 
+    // EX : Bonus - debut
+
+    // Vérifie qu’il n’y a aucune propriété inattendue
+    // Vérifie qu'il n'y a aucun mot en trop
+    const autorises = ["title", "director", "duration", "budget", "description", "imageUrl"];
+
+    for (const cle of Object.keys(body)) {
+      if (!autorises.includes(cle)) {
+        return res.status(400).send("Une propriété n'est pas autorisée : " + cle);
+      }
+    }
+    
+    // EX : Bonus - fin
+
+
     // Extractions des infos
     const {title, director, duration, budget, description, imageUrl} = body as NewFilm;
 
