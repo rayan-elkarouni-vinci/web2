@@ -22,7 +22,6 @@ const App = () => {
     director: "Adil El Arbi, Bilall Fallah",
   };
 
-
   interface Movie {
     title: string;
     director: string;
@@ -47,15 +46,20 @@ const App = () => {
       <div>
         <h2>{props.name}</h2>
         <ul>
-          <li><strong>{props.movie1.title}</strong> - Réalisateur :{" "} {props.movie1.director}</li>
-          <li><strong>{props.movie2.title}</strong> - Réalisateur :{" "} {props.movie2.director}</li>
+          <li>
+            <strong>{props.movie1.title}</strong> - Réalisateur :{" "}
+            {props.movie1.director}
+          </li>
+          <li>
+            <strong>{props.movie2.title}</strong> - Réalisateur :{" "}
+            {props.movie2.director}
+          </li>
         </ul>
       </div>
     );
   };
 
-
-    return (
+  return (
     <div>
       <PageTitle title={pageTitle} />
 
@@ -64,7 +68,6 @@ const App = () => {
       <Cinema name={cinema2Name} movie1={movie3} movie2={movie4} />
     </div>
   );
-
 };
 
 export default App;
