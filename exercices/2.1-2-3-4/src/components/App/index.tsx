@@ -1,5 +1,7 @@
 import PageTitle from "../PageTitle";
 import Cinema from "../Cinema";
+import Header from "../Header";
+import Footer from "../Footer";
 import "./App.css";
 
 const App = () => {
@@ -51,11 +53,17 @@ const App = () => {
 
   return (
     <div>
+      <Header logoUrl="https://pngdownload.io/wp-content/uploads/2023/12/GTA-6-Logo-PNG-from-Grand-Theft-Auto-VI-Transparent-jpg.webp">
+        <h1>Salut moi c'est le Header !</h1>
+      </Header>
+
       <PageTitle title={pageTitle} />
-
       <Cinema name={cinema1Name} movies={moviesCinema1} />
-
       <Cinema name={cinema2Name} movies={moviesCinema2} />
+
+      <Footer logoUrl="https://pngdownload.io/wp-content/uploads/2023/12/GTA-6-Logo-PNG-from-Grand-Theft-Auto-VI-Transparent-jpg.webp">
+        <p>Salut moi c'est le Footer !</p>
+      </Footer> 
     </div>
   );
 };
