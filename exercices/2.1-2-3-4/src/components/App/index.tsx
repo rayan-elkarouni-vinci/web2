@@ -1,9 +1,8 @@
 import PageTitle from "../PageTitle";
 import Cinema from "../Cinema";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
-
   // Debut des donnees
   const pageTitle = "Informations sur les films dans les cinémas";
 
@@ -47,14 +46,14 @@ const App = () => {
       title: "THE IRISHMAN",
       director: "Martin Scorsese",
     },
-  ]; 
+  ];
   // Fin des donnees
 
   return (
     <div>
       <PageTitle title={pageTitle} />
 
-      <Cinema name={cinema1Name} movies= {moviesCinema1} />
+      <Cinema name={cinema1Name} movies={moviesCinema1} />
 
       <Cinema name={cinema2Name} movies={moviesCinema2} />
     </div>
